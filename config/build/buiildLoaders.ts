@@ -1,26 +1,26 @@
-import { ModuleOptions } from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import ReactRefreshTypeScript from "react-refresh-typescript";
-import { BuildOptions } from "./types/types";
+import { ModuleOptions } from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ReactRefreshTypeScript from 'react-refresh-typescript';
+import { BuildOptions } from './types/types';
 
-export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
-  const isDev = options.mode === "development";
+export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
+  const isDev = options.mode === 'development';
 
   const assetLoader = {
     test: /\.(png|jpg|jpeg|gif)$/i,
-    type: "asset/resource",
+    type: 'asset/resource',
   };
 
   const svgLoader = {
     test: /\.svg$/i,
-    use: [{ loader: "@svgr/webpack", options: { icon: true } }],
+    use: [{ loader: '@svgr/webpack', options: { icon: true } }],
   };
 
   const cssLoadersWithModules = {
-    loader: "css-loader",
+    loader: 'css-loader',
     options: {
       modules: {
-        localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:8]",
+        localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
       },
     },
   };
@@ -29,7 +29,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
     test: /\.tsx?$/,
     use: [
       {
-        loader: "ts-loader",
+        loader: 'ts-loader',
         options: {
           transpileOnly: true,
           getCustomTransformers: () => ({
@@ -43,9 +43,9 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
   const scssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       cssLoadersWithModules,
-      "sass-loader",
+      'sass-loader',
     ],
   };
 
