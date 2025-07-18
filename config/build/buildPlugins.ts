@@ -15,7 +15,7 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
   const plugins: Configuration['plugins'] = [
     new HtmlWebpackPlugin({
       template: options.paths.html,
-      favicon: path.resolve(options.paths.public, 'testFAV.ico'),
+      favicon: path.resolve(options.paths.public, 'fav.ico'),
     }),
     new DefinePlugin({
       __PLATFORM__: JSON.stringify(options.platform),
@@ -40,6 +40,7 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
           {
             from: path.resolve(options.paths.public, 'locales'),
             to: path.resolve(options.paths.output, 'locales'),
+            noErrorOnMissing: true,
           },
         ],
       }),
