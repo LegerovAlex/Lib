@@ -1,0 +1,22 @@
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000000de;
+  cursor: pointer;
+  min-height: 36px;
+  user-select: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.disabled {
+  color: #aaa;
+  cursor: not-allowed;
+  pointer-events: none;
+}

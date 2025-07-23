@@ -1,7 +1,7 @@
-import { InputHTMLAttributes } from 'react';
+import { ChangeEvent, InputHTMLAttributes } from 'react';
 
-export interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+export interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
   checked: boolean;
   disabled?: boolean;
-  onChange: (checked: boolean) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }

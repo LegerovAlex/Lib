@@ -18,7 +18,6 @@
     background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
-  margin: 0;
 
   &:checked {
     background-color: #0d6efd;
@@ -48,7 +47,6 @@
   }
 
   &:disabled {
-    filter: none;
     opacity: 0.5;
     cursor: not-allowed;
   }

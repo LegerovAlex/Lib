@@ -7,7 +7,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     const id = useId();
 
     return (
-      <div className={`${styles.textField} ${error ? styles.error : ''}  ${className}`}>
+      <div className={`${styles.textField} ${error && styles.error}  ${className}`}>
         <input
           ref={ref}
           value={rest.value}
