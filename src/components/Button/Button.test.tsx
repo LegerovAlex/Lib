@@ -10,7 +10,7 @@ export interface RenderButtonResult {
 export function renderButton(props: Partial<ButtonProps> = {}): RenderButtonResult {
   const onClick = jest.fn();
   render(
-    <Button onClick={onClick} {...props}>
+    <Button {...props} onClick={onClick}>
       {props.children ?? 'Test'}
     </Button>,
   );

@@ -54,7 +54,7 @@ export const App = () => {
         <Button variant="text" onClick={() => setOpen(true)}>
           Open Modal
         </Button>
-        <Modal IsOpen={open} onClose={() => setOpen(false)}>
+        <Modal isOpen={open} onClose={() => setOpen(false)}>
           Are u sure?
         </Modal>
       </div>

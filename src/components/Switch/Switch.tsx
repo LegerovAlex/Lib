@@ -7,7 +7,7 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
     const id = useId();
 
     return (
-      <div className={styles.switch}>
+      <div>
         <input
           id={id}
           type="checkbox"
@@ -19,7 +19,6 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
           ref={ref}
           {...rest}
         />
-        <label className={styles.label} htmlFor={id}></label>
       </div>
     );
   },

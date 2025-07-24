@@ -3,7 +3,7 @@ import { ModalProps } from './Modal.props';
 import { createPortal } from 'react-dom';
 import styles from './Modal.module.scss';
 
-export const Modal: FC<ModalProps> = ({ onClose, IsOpen, children }) => {
+export const Modal: FC<ModalProps> = ({ onClose, isOpen, children }) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -11,7 +11,7 @@ export const Modal: FC<ModalProps> = ({ onClose, IsOpen, children }) => {
       }
     };
 
-    if (IsOpen) {
+    if (isOpen) {
       document.addEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'hidden';
     }
@@ -20,9 +20,9 @@ export const Modal: FC<ModalProps> = ({ onClose, IsOpen, children }) => {
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = '';
     };
-  }, [IsOpen, onClose]);
+  }, [isOpen, onClose]);
 
-  if (!IsOpen) return null;
+  if (!isOpen) return null;
 
   const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.currentTarget === event.target) {
@@ -31,7 +31,12 @@ export const Modal: FC<ModalProps> = ({ onClose, IsOpen, children }) => {
   };
 
   return createPortal(
-    <div role="dialog" onClick={handleBackdropClick} className={styles.backdrop}>
+    <div
+      role="dialog"
+      onClick={handleBackdropClick}
+      className={styles.backdrop}
+      data-testid="backdrop"
+    >
       <div className={styles.modal}>
         <button onClick={onClose} className={styles.closeButton}>
           х

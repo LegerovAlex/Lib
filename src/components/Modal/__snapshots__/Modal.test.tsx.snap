@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Modal matches snapshot when closed 1`] = `
+<div
+  id="modal-root"
+/>
+`;
+
+exports[`Modal matches snapshot when open 1`] = `
+<div
+  id="modal-root"
+>
+  <div
+    class="backdrop"
+    data-testid="backdrop"
+    role="dialog"
+  >
+    <div
+      class="modal"
+    >
+      <button
+        class="closeButton"
+      >
+        х
+      </button>
+      Modal Content
+    </div>
+  </div>
+</div>
+`;
