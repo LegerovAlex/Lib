@@ -4,6 +4,7 @@ import styles from './MenuItem.module.scss';
 
 export const MenuItem: FC<MenuItemProps> = ({ value, onSelect, children, disabled }) => {
   const handleClick = () => {
+    if (disabled) return;
     onSelect(value);
   };
   return (

@@ -25,6 +25,7 @@ export const Select: FC<SelectProps> = ({
   }, []);
 
   const handleToggle = () => {
+    if (disabled) return;
     setIsOpen((prev) => !prev);
   };
 
@@ -39,6 +40,7 @@ export const Select: FC<SelectProps> = ({
     <div className={styles.wrapper} ref={selectRef}>
       {label && <label className={styles.label}>{label}</label>}
       <div
+        role="combobox"
         tabIndex={0}
         className={`${styles.select} ${disabled && styles.disabled}`}
         onClick={handleToggle}

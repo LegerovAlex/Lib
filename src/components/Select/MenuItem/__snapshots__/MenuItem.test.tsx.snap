@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`MenuItem matches snapshot when disabled 1`] = `
+<li
+  class="menuItem disabled"
+>
+  Snapshot Disabled
+</li>
+`;
+
+exports[`MenuItem matches snapshot when enabled 1`] = `
+<li
+  class="menuItem undefined"
+>
+  Snapshot Test
+</li>
+`;

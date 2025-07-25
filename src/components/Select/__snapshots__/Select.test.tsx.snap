@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Select matches snapshot when disabled 1`] = `
+<div
+  class="select disabled"
+  role="combobox"
+  tabindex="0"
+>
+  <span
+    class="value"
+  >
+     
+    Select...
+  </span>
+  <span
+    class="arrow"
+  >
+    ▼
+  </span>
+</div>
+`;
+
+exports[`Select matches snapshot when enabled 1`] = `
+<ul
+  class="menu"
+>
+  <li
+    class="menuItem false"
+  >
+    Option One
+  </li>
+  <li
+    class="menuItem false"
+  >
+    Option Two
+  </li>
+</ul>
+`;
